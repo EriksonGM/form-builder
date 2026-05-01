@@ -1,4 +1,4 @@
-# form-demo
+# KaylaFlow
 
 Sistema web para **crear, almacenar, renderizar y editar formularios dinámicos** definidos por un schema. Construido con Nuxt 4, Nuxt UI 4 y SQLite.
 
@@ -21,7 +21,7 @@ Permite diseñar formularios desde una interfaz web (sin escribir código), guar
   - `file` — adjuntar uno o varios ficheros (almacenados en base64 dentro de la respuesta)
 - **Validaciones por campo**: `name`, `displayName`, `required`, `min`/`max` (longitud para texto, rango para número, cantidad para listas y ficheros), `pattern` (regex) para textos y para validar nombre/extensión de ficheros, y `options` para selects/radios/checkboxes.
 - **Anidamiento recursivo**: los campos `object` y `array` admiten cualquier combinación de sub-campos, también `object` y `array`. La creación/edición de estos campos se hace mediante **modal**, manteniendo un draft que solo se persiste al confirmar.
-- **Persistencia en SQLite** (`better-sqlite3`) con archivo local en `data/form-demo.sqlite`.
+- **Persistencia en SQLite** (`better-sqlite3`) con archivo local en `data/kayla-flow.sqlite`.
 - **API REST** integrada en Nitro (`/api/forms`, `/api/forms/:id/submissions`, `/api/stats`).
 - **Internacionalización** con `@nuxtjs/i18n`: Português, English, Español, Français. Switcher en el header.
 - **Modo claro / oscuro** vía `UColorModeButton`.
@@ -183,7 +183,7 @@ pnpm install
 pnpm dev
 ```
 
-Servidor en `http://localhost:3000`. La base SQLite se crea automáticamente en `data/form-demo.sqlite` al primer request.
+Servidor en `http://localhost:3000`. La base SQLite se crea automáticamente en `data/kayla-flow.sqlite` al primer request.
 
 ## Producción
 

@@ -6,7 +6,7 @@ let _db: Database.Database | null = null
 
 export function useDb() {
   if (_db) return _db
-  const file = resolve(process.cwd(), 'data', 'form-demo.sqlite')
+  const file = resolve(process.cwd(), 'data', 'kayla-flow.sqlite')
   if (!existsSync(dirname(file))) mkdirSync(dirname(file), { recursive: true })
   _db = new Database(file)
   _db.pragma('journal_mode = WAL')
