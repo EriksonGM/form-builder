@@ -46,7 +46,8 @@
     "addItem": "Add item",
     "editItem": "Edit item",
     "newItem": "New item",
-    "item": "Item"
+    "item": "Item",
+    "chooseFile": "Choose files"
   },
   "home": {
     "title": "Dashboard",
@@ -79,6 +80,19 @@
     "submitSuccess": "Submission saved",
     "validationError": "Please check the form fields"
   },
+  "errors": {
+    "required": "This field is required",
+    "pattern": "Invalid format",
+    "invalid": "Invalid value",
+    "minLength": "Must be at least {n} characters",
+    "maxLength": "Must be at most {n} characters",
+    "minValue": "Minimum value is {n}",
+    "maxValue": "Maximum value is {n}",
+    "minCount": "At least {n} items required",
+    "maxCount": "At most {n} items allowed",
+    "min": "Minimum {n}",
+    "max": "Maximum {n}"
+  },
   "fieldTypes": {
     "text": "Short text",
     "textarea": "Long text",
@@ -89,6 +103,7 @@
     "checkbox": "Checkbox group",
     "boolean": "Boolean (switch)",
     "object": "Object",
-    "array": "List of objects"
+    "array": "List of objects",
+    "file": "Files"
   }
 }

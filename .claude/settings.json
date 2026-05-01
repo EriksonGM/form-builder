@@ -21,7 +21,8 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/forms/1)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/forms/1/edit)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/forms/1/fill)",
-      "Bash(curl -s -X POST http://localhost:3000/api/forms/1/submissions -H \"Content-Type: application/json\" -d '{\"data\":{\"name\":\"Erik\",\"age\":30,\"items\":[{\"label\":\"hello\"}]}}')"
+      "Bash(curl -s -X POST http://localhost:3000/api/forms/1/submissions -H \"Content-Type: application/json\" -d '{\"data\":{\"name\":\"Erik\",\"age\":30,\"items\":[{\"label\":\"hello\"}]}}')",
+      "Bash(claude plugin *)"
     ]
   }
 }

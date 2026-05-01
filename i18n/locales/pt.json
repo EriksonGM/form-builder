@@ -46,7 +46,8 @@
     "addItem": "Adicionar item",
     "editItem": "Editar item",
     "newItem": "Novo item",
-    "item": "Item"
+    "item": "Item",
+    "chooseFile": "Escolher arquivos"
   },
   "home": {
     "title": "Painel",
@@ -79,6 +80,19 @@
     "submitSuccess": "Resposta enviada",
     "validationError": "Verifique os campos do formulário"
   },
+  "errors": {
+    "required": "Este campo é obrigatório",
+    "pattern": "Formato inválido",
+    "invalid": "Valor inválido",
+    "minLength": "Deve ter ao menos {n} caracteres",
+    "maxLength": "Deve ter no máximo {n} caracteres",
+    "minValue": "O valor mínimo é {n}",
+    "maxValue": "O valor máximo é {n}",
+    "minCount": "São necessários ao menos {n} itens",
+    "maxCount": "São permitidos no máximo {n} itens",
+    "min": "Mínimo {n}",
+    "max": "Máximo {n}"
+  },
   "fieldTypes": {
     "text": "Texto curto",
     "textarea": "Texto longo",
@@ -89,6 +103,7 @@
     "checkbox": "Múltipla escolha (checkbox)",
     "boolean": "Booleano (switch)",
     "object": "Objeto",
-    "array": "Lista de objetos"
+    "array": "Lista de objetos",
+    "file": "Arquivos"
   }
 }

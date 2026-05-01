@@ -25,6 +25,20 @@ export function validateField(field: FormField, value: any): string | null {
     if (field.min != null && n < field.min) return `min:${field.min}`
     if (field.max != null && n > field.max) return `max:${field.max}`
   }
+  if (field.type === 'file') {
+    const arr = Array.isArray(value) ? value : []
+    if (field.min != null && arr.length < field.min) return `min:${field.min}`
+    if (field.max != null && arr.length > field.max) return `max:${field.max}`
+    if (field.pattern) {
+      try {
+        const re = new RegExp(field.pattern, 'i')
+        for (const f of arr) {
+          const fname = String(f?.name ?? '')
+          if (!re.test(fname)) return 'pattern'
+        }
+      } catch {}
+    }
+  }
   if (field.type === 'array') {
     const arr = Array.isArray(value) ? value : []
     if (field.min != null && arr.length < field.min) return `min:${field.min}`

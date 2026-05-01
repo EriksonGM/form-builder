@@ -46,7 +46,8 @@
     "addItem": "Ajouter un élément",
     "editItem": "Modifier l'élément",
     "newItem": "Nouvel élément",
-    "item": "Élément"
+    "item": "Élément",
+    "chooseFile": "Choisir des fichiers"
   },
   "home": {
     "title": "Tableau de bord",
@@ -79,6 +80,19 @@
     "submitSuccess": "Réponse enregistrée",
     "validationError": "Vérifiez les champs du formulaire"
   },
+  "errors": {
+    "required": "Ce champ est obligatoire",
+    "pattern": "Format invalide",
+    "invalid": "Valeur invalide",
+    "minLength": "Doit contenir au moins {n} caractères",
+    "maxLength": "Doit contenir au maximum {n} caractères",
+    "minValue": "La valeur minimale est {n}",
+    "maxValue": "La valeur maximale est {n}",
+    "minCount": "Au moins {n} éléments requis",
+    "maxCount": "Au maximum {n} éléments autorisés",
+    "min": "Minimum {n}",
+    "max": "Maximum {n}"
+  },
   "fieldTypes": {
     "text": "Texte court",
     "textarea": "Texte long",
@@ -89,6 +103,7 @@
     "checkbox": "Choix multiple (case à cocher)",
     "boolean": "Booléen (interrupteur)",
     "object": "Objet",
-    "array": "Liste d'objets"
+    "array": "Liste d'objets",
+    "file": "Fichiers"
   }
 }

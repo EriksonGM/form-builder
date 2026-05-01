@@ -12,7 +12,8 @@ export function useFieldTypes() {
     { label: t('fieldTypes.checkbox'), value: 'checkbox' },
     { label: t('fieldTypes.boolean'), value: 'boolean' },
     { label: t('fieldTypes.object'), value: 'object' },
-    { label: t('fieldTypes.array'), value: 'array' }
+    { label: t('fieldTypes.array'), value: 'array' },
+    { label: t('fieldTypes.file'), value: 'file' }
   ]))
   return { types }
 }
@@ -36,9 +37,9 @@ export function fieldHasChildren(type: FieldType) {
 }
 
 export function fieldHasMinMax(type: FieldType) {
-  return type === 'number' || type === 'text' || type === 'textarea' || type === 'array'
+  return type === 'number' || type === 'text' || type === 'textarea' || type === 'array' || type === 'file'
 }
 
 export function fieldHasPattern(type: FieldType) {
-  return type === 'text' || type === 'textarea'
+  return type === 'text' || type === 'textarea' || type === 'file'
 }

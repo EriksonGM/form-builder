@@ -9,6 +9,14 @@ export type FieldType =
   | 'boolean'
   | 'object'
   | 'array'
+  | 'file'
+
+export interface StoredFile {
+  name: string
+  type: string
+  size: number
+  dataUrl: string
+}
 
 export interface FieldOption {
   label: string
@@ -21,10 +29,10 @@ export interface FormField {
   displayName: string
   type: FieldType
   required?: boolean
-  // text / textarea length / array length
+  // text / textarea length / array length / file count
   min?: number
   max?: number
-  // regex pattern for text/textarea
+  // regex pattern for text/textarea, or to validate file names/extensions
   pattern?: string
   // for select / radio / checkbox
   options?: FieldOption[]
