@@ -6,7 +6,8 @@
   "nav": {
     "home": "Inicio",
     "create": "Crear formulario",
-    "list": "Formularios"
+    "list": "Formularios",
+    "users": "Usuarios"
   },
   "common": {
     "save": "Guardar",
@@ -90,6 +91,20 @@
       "fields": "Campos",
       "preview": "Previsualización"
     }
+  },
+  "users": {
+    "title": "Usuarios",
+    "newUser": "Nuevo usuario",
+    "editUser": "Editar usuario",
+    "email": "Correo",
+    "photo": "Foto",
+    "uploadPhoto": "Subir foto",
+    "photoHint": "JPG o PNG, máx. 2 MB",
+    "photoTooLarge": "La imagen es demasiado grande (máx. 2 MB)",
+    "deleteConfirm": "¿Seguro que deseas eliminar este usuario?",
+    "saved": "Usuario guardado",
+    "deleted": "Usuario eliminado",
+    "validationError": "Revisa los campos del usuario"
   },
   "errors": {
     "required": "Este campo es obligatorio",

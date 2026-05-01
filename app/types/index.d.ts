@@ -64,3 +64,12 @@ export interface StoredSubmission {
   data: Record<string, any>
   createdAt: string
 }
+
+export interface StoredUser {
+  id: number
+  name: string
+  email: string
+  photo: string | null
+  createdAt: string
+  updatedAt: string
+}

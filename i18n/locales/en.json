@@ -6,7 +6,8 @@
   "nav": {
     "home": "Home",
     "create": "Create form",
-    "list": "Forms"
+    "list": "Forms",
+    "users": "Users"
   },
   "common": {
     "save": "Save",
@@ -90,6 +91,20 @@
       "fields": "Fields",
       "preview": "Preview"
     }
+  },
+  "users": {
+    "title": "Users",
+    "newUser": "New user",
+    "editUser": "Edit user",
+    "email": "Email",
+    "photo": "Photo",
+    "uploadPhoto": "Upload photo",
+    "photoHint": "JPG or PNG, max 2 MB",
+    "photoTooLarge": "Image is too large (max 2 MB)",
+    "deleteConfirm": "Are you sure you want to delete this user?",
+    "saved": "User saved",
+    "deleted": "User deleted",
+    "validationError": "Please check the user fields"
   },
   "errors": {
     "required": "This field is required",

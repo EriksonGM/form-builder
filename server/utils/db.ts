@@ -26,6 +26,14 @@ export function useDb() {
       created_at TEXT NOT NULL DEFAULT (datetime('now')),
       FOREIGN KEY (form_id) REFERENCES forms(id) ON DELETE CASCADE
     );
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      photo TEXT,
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
   `)
   return _db
 }
@@ -47,5 +55,16 @@ export function rowToSubmission(r: any) {
     formId: r.form_id,
     data: JSON.parse(r.data),
     createdAt: r.created_at
+  }
+}
+
+export function rowToUser(r: any) {
+  return {
+    id: r.id,
+    name: r.name,
+    email: r.email,
+    photo: r.photo ?? null,
+    createdAt: r.created_at,
+    updatedAt: r.updated_at
   }
 }
