@@ -46,6 +46,7 @@ export interface FormSchema {
   title: string
   description?: string
   fields: FormField[]
+  templates?: StoredFile[]
 }
 
 export interface StoredForm {

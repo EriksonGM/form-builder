@@ -8,14 +8,22 @@
       </div>
     </div>
 
-    <SchemaEditor v-model="schema" />
-
-    <UCard>
-      <template #header>
-        <h3 class="font-semibold">{{ t('common.preview') }}</h3>
+    <UTabs v-model="activeTab" :items="tabs" class="w-full">
+      <template #details>
+        <SchemaEditor v-model="schema" section="details" />
       </template>
-      <FormRenderer :schema="schema" />
-    </UCard>
+      <template #templates>
+        <SchemaEditor v-model="schema" section="templates" />
+      </template>
+      <template #fields>
+        <SchemaEditor v-model="schema" section="fields" />
+      </template>
+      <template #preview>
+        <UCard>
+          <FormRenderer :schema="schema" />
+        </UCard>
+      </template>
+    </UTabs>
   </div>
 </template>
 
@@ -28,12 +36,20 @@ const { t } = useI18n()
 const toast = useToast()
 const router = useRouter()
 const saving = ref(false)
+const activeTab = ref('details')
 
 const schema = ref<FormSchema>({
   title: '',
   description: '',
   fields: []
 })
+
+const tabs = computed(() => [
+  { label: t('forms.sections.details'), icon: 'i-lucide-info', slot: 'details', value: 'details' },
+  { label: t('forms.sections.templates'), icon: 'i-lucide-file-text', slot: 'templates', value: 'templates' },
+  { label: t('forms.sections.fields'), icon: 'i-lucide-list', slot: 'fields', value: 'fields' },
+  { label: t('forms.sections.preview'), icon: 'i-lucide-eye', slot: 'preview', value: 'preview' }
+])
 
 async function save() {
   if (!schema.value.title) {

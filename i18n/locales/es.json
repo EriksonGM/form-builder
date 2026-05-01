@@ -47,7 +47,9 @@
     "editItem": "Editar elemento",
     "newItem": "Nuevo elemento",
     "item": "Elemento",
-    "chooseFile": "Elegir archivos"
+    "chooseFile": "Elegir archivos",
+    "moveUp": "Subir",
+    "moveDown": "Bajar"
   },
   "home": {
     "title": "Panel",
@@ -78,7 +80,16 @@
     "saved": "Formulario guardado",
     "deleted": "Formulario eliminado",
     "submitSuccess": "Respuesta guardada",
-    "validationError": "Revisa los campos del formulario"
+    "validationError": "Revisa los campos del formulario",
+    "templates": "Templates Word",
+    "uploadTemplate": "Subir template",
+    "noTemplates": "Sin templates. Sube uno o varios documentos Word.",
+    "sections": {
+      "details": "Detalles",
+      "templates": "Templates",
+      "fields": "Campos",
+      "preview": "Previsualización"
+    }
   },
   "errors": {
     "required": "Este campo es obligatorio",

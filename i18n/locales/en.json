@@ -47,7 +47,9 @@
     "editItem": "Edit item",
     "newItem": "New item",
     "item": "Item",
-    "chooseFile": "Choose files"
+    "chooseFile": "Choose files",
+    "moveUp": "Move up",
+    "moveDown": "Move down"
   },
   "home": {
     "title": "Dashboard",
@@ -78,7 +80,16 @@
     "saved": "Form saved",
     "deleted": "Form deleted",
     "submitSuccess": "Submission saved",
-    "validationError": "Please check the form fields"
+    "validationError": "Please check the form fields",
+    "templates": "Word templates",
+    "uploadTemplate": "Upload template",
+    "noTemplates": "No templates. Upload one or more Word documents.",
+    "sections": {
+      "details": "Details",
+      "templates": "Templates",
+      "fields": "Fields",
+      "preview": "Preview"
+    }
   },
   "errors": {
     "required": "This field is required",

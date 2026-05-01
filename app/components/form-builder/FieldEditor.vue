@@ -53,8 +53,12 @@
         v-for="(child, i) in model.fields"
         :key="child.id"
         :model-value="child"
+        :can-move-up="i > 0"
+        :can-move-down="i < (model.fields?.length ?? 0) - 1"
         @update:model-value="updateChild(i, $event)"
         @remove="removeChild(i)"
+        @move-up="moveChild(i, -1)"
+        @move-down="moveChild(i, 1)"
       />
       <p v-if="!model.fields?.length" class="text-sm text-(--ui-text-muted)">
         {{ t('forms.noFields') }}
@@ -62,7 +66,23 @@
     </div>
 
     <template #footer>
-      <div class="flex justify-end">
+      <div class="flex justify-between gap-2">
+        <div class="flex gap-1">
+          <UButton
+            variant="soft"
+            icon="i-lucide-arrow-up"
+            :disabled="!canMoveUp"
+            :aria-label="t('common.moveUp')"
+            @click="$emit('move-up')"
+          />
+          <UButton
+            variant="soft"
+            icon="i-lucide-arrow-down"
+            :disabled="!canMoveDown"
+            :aria-label="t('common.moveDown')"
+            @click="$emit('move-down')"
+          />
+        </div>
         <UButton color="error" variant="soft" icon="i-lucide-trash-2" @click="$emit('remove')">
           {{ t('common.remove') }}
         </UButton>
@@ -75,8 +95,17 @@
 import type { FormField } from '~/types'
 import { fieldHasOptions, fieldHasChildren, fieldHasMinMax, fieldHasPattern, useFieldTypes, newField } from '~/composables/useFieldTypes'
 
-const props = defineProps<{ modelValue: FormField }>()
-const emit = defineEmits<{ 'update:modelValue': [v: FormField], remove: [] }>()
+const props = defineProps<{
+  modelValue: FormField
+  canMoveUp?: boolean
+  canMoveDown?: boolean
+}>()
+const emit = defineEmits<{
+  'update:modelValue': [v: FormField]
+  remove: []
+  'move-up': []
+  'move-down': []
+}>()
 const { t } = useI18n()
 const { types } = useFieldTypes()
 
@@ -111,5 +140,13 @@ function updateChild(i: number, v: FormField) {
 }
 function removeChild(i: number) {
   model.value.fields?.splice(i, 1)
+}
+function moveChild(i: number, delta: number) {
+  const arr = model.value.fields
+  if (!arr) return
+  const j = i + delta
+  if (j < 0 || j >= arr.length) return
+  const [item] = arr.splice(i, 1)
+  arr.splice(j, 0, item!)
 }
 </script>

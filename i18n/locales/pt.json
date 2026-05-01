@@ -47,7 +47,9 @@
     "editItem": "Editar item",
     "newItem": "Novo item",
     "item": "Item",
-    "chooseFile": "Escolher arquivos"
+    "chooseFile": "Escolher arquivos",
+    "moveUp": "Mover para cima",
+    "moveDown": "Mover para baixo"
   },
   "home": {
     "title": "Painel",
@@ -78,7 +80,16 @@
     "saved": "Formulário salvo",
     "deleted": "Formulário excluído",
     "submitSuccess": "Resposta enviada",
-    "validationError": "Verifique os campos do formulário"
+    "validationError": "Verifique os campos do formulário",
+    "templates": "Templates Word",
+    "uploadTemplate": "Enviar template",
+    "noTemplates": "Sem templates. Envie um ou mais documentos Word.",
+    "sections": {
+      "details": "Detalhes",
+      "templates": "Templates",
+      "fields": "Campos",
+      "preview": "Pré-visualização"
+    }
   },
   "errors": {
     "required": "Este campo é obrigatório",
