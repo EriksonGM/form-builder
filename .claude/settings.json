@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add *)",
+      "Bash(rm -rf .nuxt)",
+      "Bash(pnpm nuxt *)",
+      "Bash(pnpm dev *)",
+      "Bash(curl -s -o /tmp/index.html -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /tmp/forms.html -w \"%{http_code}\\\\n\" http://localhost:3000/forms)",
+      "Bash(curl -s -o /tmp/new.html -w \"%{http_code}\\\\n\" http://localhost:3000/forms/new)",
+      "Bash(curl -s -o /tmp/stats.json -w \"%{http_code}\\\\n\" http://localhost:3000/api/stats)",
+      "Bash(curl -s -o /tmp/forms.json -w \"%{http_code}\\\\n\" http://localhost:3000/api/forms)",
+      "Bash(curl -s -o /tmp/index.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /tmp/stats.json -w \"stats %{http_code}\\\\n\" http://localhost:3000/api/stats)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/forms)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/forms/new)",
+      "Bash(curl -s -X POST http://localhost:3000/api/forms -H \"Content-Type: application/json\" -d '{\"title\":\"Demo\",\"description\":\"d\",\"schema\":{\"title\":\"Demo\",\"description\":\"d\",\"fields\":[{\"id\":\"a\",\"name\":\"name\",\"displayName\":\"Nome\",\"type\":\"text\",\"required\":true,\"min\":2,\"max\":50,\"pattern\":\"^[a-zA-Z ]+$\"},{\"id\":\"b\",\"name\":\"age\",\"displayName\":\"Idade\",\"type\":\"number\",\"min\":0,\"max\":120},{\"id\":\"c\",\"name\":\"items\",\"displayName\":\"Itens\",\"type\":\"array\",\"fields\":[{\"id\":\"d\",\"name\":\"label\",\"displayName\":\"Etiqueta\",\"type\":\"text\"}]}]}}')",
+      "Bash(curl -s http://localhost:3000/api/forms)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/forms/1)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/forms/1/edit)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/forms/1/fill)",
+      "Bash(curl -s -X POST http://localhost:3000/api/forms/1/submissions -H \"Content-Type: application/json\" -d '{\"data\":{\"name\":\"Erik\",\"age\":30,\"items\":[{\"label\":\"hello\"}]}}')"
+    ]
+  }
+}

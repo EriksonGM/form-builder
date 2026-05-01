@@ -1,34 +1,57 @@
-export type FormControlType = 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' | 'date' | 'month' | 'week' | 'time' | 'color' | 'file' | 'hidden' | 'image' | 'radio' | 'checkbox' | 'select' | 'textarea'
+export type FieldType =
+  | 'text'
+  | 'textarea'
+  | 'number'
+  | 'date'
+  | 'select'
+  | 'radio'
+  | 'checkbox'
+  | 'boolean'
+  | 'object'
+  | 'array'
 
-export interface FormControl {
-    id: string;
-    name: string;
-    label: string;
-    type: FormControlType;
-    value: string;
-    required?: boolean = true;
-    minLength?: number;
-    maxLength?: number;
-    pattern?: string;
+export interface FieldOption {
+  label: string
+  value: string
 }
 
-export interface FormSelectOption {
-    label: string;
-    value: string;
+export interface FormField {
+  id: string
+  name: string
+  displayName: string
+  type: FieldType
+  required?: boolean
+  // text / textarea length / array length
+  min?: number
+  max?: number
+  // regex pattern for text/textarea
+  pattern?: string
+  // for select / radio / checkbox
+  options?: FieldOption[]
+  // for object / array(of objects)
+  fields?: FormField[]
+  // default value
+  defaultValue?: any
 }
 
-export interface FormControlSelect extends FormControl {
-    type: 'select';
-    options: FormSelectOption[];
+export interface FormSchema {
+  title: string
+  description?: string
+  fields: FormField[]
 }
 
-export interface FormSection {
-    title: string;
-    description: string;
-    controls: FormControl[];
+export interface StoredForm {
+  id: number
+  title: string
+  description?: string
+  schema: FormSchema
+  createdAt: string
+  updatedAt: string
 }
 
-export interface ServiceForm {
-    title: string;
-    sections: FormSection[];
+export interface StoredSubmission {
+  id: number
+  formId: number
+  data: Record<string, any>
+  createdAt: string
 }

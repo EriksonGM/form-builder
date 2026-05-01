@@ -1,13 +1,28 @@
 <template>
-
   <div>
-    <UHeader title="Demo Store">
+    <UHeader :title="t('app.name')">
+      <template #title>
+        <NuxtLink to="/" class="font-bold text-lg flex items-center gap-2">
+          <UIcon name="i-lucide-form-input" class="text-(--ui-primary)" />
+          {{ t('app.name') }}
+        </NuxtLink>
+      </template>
+
+      <UNavigationMenu :items="items" variant="link" />
+
       <template #right>
+        <USelect
+          :model-value="locale"
+          :items="localeItems"
+          size="sm"
+          @update:model-value="setLocale($event as any)"
+        />
         <UColorModeButton />
       </template>
     </UHeader>
-    <UMain class="">
-      <UContainer class="mx-auto">
+
+    <UMain>
+      <UContainer class="py-6">
         <slot />
       </UContainer>
     </UMain>
@@ -15,25 +30,17 @@
 </template>
 
 <script lang="ts" setup>
-import type { NavigationMenuItem } from '@nuxt/ui';
+import type { NavigationMenuItem } from '@nuxt/ui'
 
-const items: NavigationMenuItem[] = [
-  {
-    label: 'Figma Kit',
-    to: 'https://go.nuxt.com/figma-ui',
-    target: '_blank'
-  },
-  {
-    label: 'Playground',
-    to: 'https://stackblitz.com/edit/nuxt-ui',
-    target: '_blank'
-  },
-  {
-    label: 'Releases',
-    to: 'https://github.com/nuxt/ui/releases',
-    target: '_blank'
-  }
-]
+const { t, locale, locales, setLocale } = useI18n()
+
+const items = computed<NavigationMenuItem[]>(() => [
+  { label: t('nav.home'), icon: 'i-lucide-home', to: '/' },
+  { label: t('nav.list'), icon: 'i-lucide-list', to: '/forms' },
+  { label: t('nav.create'), icon: 'i-lucide-plus', to: '/forms/new' }
+])
+
+const localeItems = computed(() =>
+  (locales.value as any[]).map(l => ({ label: l.name, value: l.code }))
+)
 </script>
-
-<style></style>
