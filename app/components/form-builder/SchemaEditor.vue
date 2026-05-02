@@ -39,6 +39,12 @@
       <p v-else class="text-(--ui-text-muted) text-sm">{{ t('forms.noTemplates') }}</p>
     </UCard>
 
+    <StepsEditor
+      v-if="section === 'steps'"
+      :model-value="model"
+      @update:model-value="model = $event"
+    />
+
     <template v-if="!section || section === 'fields'">
       <div class="flex items-center justify-between">
         <h3 class="text-lg font-semibold">{{ t('forms.fields') }}</h3>
@@ -70,10 +76,11 @@
 import type { FormSchema, StoredFile } from '~/types'
 import { newField } from '~/composables/useFieldTypes'
 import FieldEditor from './FieldEditor.vue'
+import StepsEditor from './StepsEditor.vue'
 
 const props = defineProps<{
   modelValue: FormSchema
-  section?: 'details' | 'templates' | 'fields'
+  section?: 'details' | 'templates' | 'fields' | 'steps'
 }>()
 const emit = defineEmits<{ 'update:modelValue': [v: FormSchema] }>()
 const { t } = useI18n()

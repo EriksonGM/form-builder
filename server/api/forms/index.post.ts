@@ -5,6 +5,7 @@ export default defineEventHandler(async (event) => {
   if (!body?.title || !body?.schema) {
     throw createError({ statusCode: 400, statusMessage: 'title and schema are required' })
   }
+  validateSteps(body.schema)
   const db = useDb()
   const stmt = db.prepare(
     'INSERT INTO forms (title, description, schema) VALUES (?, ?, ?)'

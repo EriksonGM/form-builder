@@ -18,6 +18,9 @@
       <template #fields>
         <SchemaEditor v-model="schema" section="fields" />
       </template>
+      <template #steps>
+        <SchemaEditor v-model="schema" section="steps" />
+      </template>
       <template #preview>
         <UCard>
           <FormRenderer :schema="schema" />
@@ -48,6 +51,7 @@ const tabs = computed(() => [
   { label: t('forms.sections.details'), icon: 'i-lucide-info', slot: 'details', value: 'details' },
   { label: t('forms.sections.templates'), icon: 'i-lucide-file-text', slot: 'templates', value: 'templates' },
   { label: t('forms.sections.fields'), icon: 'i-lucide-list', slot: 'fields', value: 'fields' },
+  { label: t('forms.sections.steps'), icon: 'i-lucide-workflow', slot: 'steps', value: 'steps' },
   { label: t('forms.sections.preview'), icon: 'i-lucide-eye', slot: 'preview', value: 'preview' }
 ])
 

@@ -65,9 +65,11 @@ const sidebarOpen = ref(false)
 
 const navItems = computed<NavigationMenuItem[][]>(() => [[
   { label: t('nav.home'), icon: 'i-lucide-home', to: '/' },
+  { label: t('nav.processes'), icon: 'i-lucide-folder-kanban', to: '/processes' },
   { label: t('nav.list'), icon: 'i-lucide-list', to: '/forms' },
   { label: t('nav.create'), icon: 'i-lucide-plus', to: '/forms/new' },
-  { label: t('nav.users'), icon: 'i-lucide-users', to: '/users' }
+  { label: t('nav.users'), icon: 'i-lucide-user', to: '/users' },
+  { label: t('nav.groups'), icon: 'i-lucide-users', to: '/groups' }
 ]])
 
 const localeItems = computed(() =>
